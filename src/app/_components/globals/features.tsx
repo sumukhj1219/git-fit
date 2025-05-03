@@ -15,7 +15,8 @@ export function Features() {
       <h2 className="text-secondary/50 flex items-center justify-center mx-auto m-10 p-2 text-5xl font-medium mt-20">
         Features
       </h2>
-      <BentoGrid>
+      <BentoGrid
+      >
         {items.map((item, i) => (
           <BentoGridItem
             key={i}

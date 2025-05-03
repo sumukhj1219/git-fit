@@ -2,8 +2,8 @@ import React from 'react';
 
 const Preview = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto mt-20 px-4 sm:px-6 lg:px-8">
-      <div className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] rounded-xl bg-neutral-950 shadow-md overflow-hidden flex items-center justify-center border-8 border-neutral-900 ">
+    <div className="w-full max-w-5xl mx-auto mt-20 px-4 sm:px-6 lg:px-8 ">
+      <div className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] rounded-xl shadow-2xl shadow-neutral-700 bg-neutral-950 overflow-hidden flex items-center justify-center border-8 border-neutral-900 ">
         <video
           autoPlay
           loop
