@@ -21,7 +21,7 @@ const StarBorder = <T extends React.ElementType = "button">({
   const Component = as || "button";
 
   return (
-    <Component onClick={()=>redirect("https://github.com/sumukhj1219/t3-app")} className={`star-border-container ${className}`} {...rest}>
+    <Component onClick={()=>redirect("https://github.com/sumukhj1219/git-fit")} className={`star-border-container ${className}`} {...rest}>
       <div
         className="border-gradient-bottom"
         style={{
