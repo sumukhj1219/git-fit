@@ -12,7 +12,7 @@ import { PaletteIcon, SettingsIcon, SparklesIcon } from "lucide-react";
 export function Features() {
   return (
     <>
-      <h2 className="text-secondary/50 flex items-center justify-center mx-auto m-10 text-5xl font-medium mt-20">
+      <h2 className="text-secondary/50 flex items-center justify-center mx-auto m-10 p-2 text-5xl font-medium mt-20">
         Features
       </h2>
       <BentoGrid>

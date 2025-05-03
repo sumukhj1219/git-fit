@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-neutral-800 py-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Git Fit. Built with ❤️ by you.
+        © {new Date().getFullYear()} Git Fit. Built with ❤️ by sumukh.
       </div>
     </footer>
   );
