@@ -8,7 +8,7 @@ import ChatInput from '~/app/_components/chats/chat-input'
 const page = () => {
   const {data:session} = useSession()
   if(!session?.user.id){
-    redirect("/")
+    redirect("/api/auth/signin")
   }
   return (
     <div>
