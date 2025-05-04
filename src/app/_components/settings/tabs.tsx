@@ -10,14 +10,14 @@ const SettingTabs = () => {
             <Tabs defaultValue="account" className="w-full">
                 <TabsList className="bg-neutral-700/50 w-full">
                     <TabsTrigger value="account">Account</TabsTrigger>
-                    <TabsTrigger value="billing">Billing</TabsTrigger>
+                    {/* <TabsTrigger value="billing">Billing</TabsTrigger> */}
                     <TabsTrigger value="api">Api Keys</TabsTrigger>
 
                 </TabsList>
                 <TabsContent value="account">
                     <AccountTab />
                 </TabsContent>
-                <TabsContent value="billing"></TabsContent>
+                {/* <TabsContent value="billing"></TabsContent> */}
                 <TabsContent value="api">
                     <ApiTab />
                 </TabsContent>
