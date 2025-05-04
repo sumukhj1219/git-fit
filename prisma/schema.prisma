@@ -57,6 +57,7 @@ model User {
     Subscription  Subscription[]
     Plan          Plan?          @relation(fields: [planId], references: [id])
     planId        String?
+    ApiKey        ApiKey[]
 }
 
 model Payments {
@@ -66,7 +67,7 @@ model Payments {
     razorpayPayId String   @unique
     amount        Int
     currency      String   @default("INR")
-    status        String 
+    status        String
     createdAt     DateTime @default(now())
 }
 
@@ -74,16 +75,26 @@ model Subscription {
     id               String   @id @default(cuid())
     userId           String
     razorpaySubId    String   @unique
-    status           String 
+    status           String
     currentPeriodEnd DateTime
     user             User     @relation(fields: [userId], references: [id])
 }
 
 model Plan {
     id          String  @id @default(cuid())
-    name        String
-    price       Int // in paise for Razorpay (e.g., ₹99 = 9900)
-    interval    String // "monthly", "yearly", etc.
+    name        String  @default("Free")
+    price       Int 
+    interval    String 
     description String?
     User        User[]
+}
+
+model ApiKey {
+    id        String    @id @default(cuid())
+    key       String    @unique
+    userId    String
+    user      User      @relation(fields: [userId], references: [id])
+    createdAt DateTime  @default(now())
+    lastUsed  DateTime?
+    isActive  Boolean   @default(true)
 }

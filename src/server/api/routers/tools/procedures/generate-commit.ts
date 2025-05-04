@@ -19,7 +19,7 @@ export const generateCommit = protectedProcedure
         Commit Type: ${input.commitType}
         Git Diff:
         ${input.message}
-        Commit Style: ${input.style}
+        Commit Style generate the message as per the style only: ${input.style}
       `.trim();
 
       const response = await generateGeminiResponse(prompt);

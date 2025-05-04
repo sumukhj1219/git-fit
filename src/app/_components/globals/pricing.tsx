@@ -53,7 +53,7 @@ const Pricing = () => {
             className={`rounded-2xl border p-6 shadow-md bg-neutral-950 dark:bg-black text-white ${plan.color}`}
           >
             <h2 className="text-2xl font-semibold mb-2">{plan.name}</h2>
-            <p className="text-4xl font-bold mb-4">{plan.price}<span className="text-sm font-normal">/month</span></p>
+            <p className="text-4xl font-bold mb-4">{plan.price}<span className="text-sm font-normal">{plan.name !== "Team" ? "/month":"/year"}</span></p>
             <ul className="space-y-2">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center space-x-2">

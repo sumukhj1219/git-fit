@@ -19,6 +19,7 @@ import { api } from "~/trpc/react";
 import CommitTypes from "./commit-types";
 import { ChatMessages } from "./chat-messages";
 import StyleControl from "./style-control";
+import UpgradeModal from "./upgrade-modal";
 
 const formSchema = z.object({
   message: z.string().min(2, {
@@ -31,6 +32,7 @@ const ChatInput = () => {
   const [userMessage, setUserMessage] = useState("");
   const [aiResponse, setAiResponse] = useState("");
   const [style, setStyle] = useState("concise");
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -46,7 +48,7 @@ const ChatInput = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setUserMessage(values.message);
-    setAiResponse(""); 
+    setAiResponse("");
     generateCommit({ ...values, commitType, style });
     form.reset()
   };
@@ -85,7 +87,15 @@ const ChatInput = () => {
                       className="w-full text-secondary/50 bg-neutral-900 rounded-2xl border border-neutral-700 shadow-[0_0_0_1px_#27272a,inset_0_0_8px_#27272a] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 pl-12 pr-14 pb-14 resize-none text-xs md:text-sm custom-scrollbar max-h-60"
 
                     />
-                    <StyleControl selected={style} onSelect={setStyle} />
+
+                    <StyleControl
+                      selected={style}
+                      onSelect={setStyle}
+                      isProUser={false}
+                      onUpgradeClick={() => setShowUpgradeModal(true)}
+                    />
+                    <UpgradeModal open={showUpgradeModal} onClose={() => setShowUpgradeModal(false)} />
+
                     <Button
                       type="submit"
                       size="icon"
