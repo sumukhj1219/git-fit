@@ -22,9 +22,7 @@ const Settings = () => {
                     <DialogHeader>
                         <DialogTitle>Settings</DialogTitle>
                         <Separator className='bg-neutral-700' />
-                        {/* <DialogDescription > */}
                             <SettingTabs />
-                        {/* </DialogDescription> */}
                     </DialogHeader>
                 </DialogContent>
             </Dialog>

@@ -13,10 +13,10 @@ import {
 const styleControllers = [
   "concise",
   "conventional",
+  "casual", 
   "emoji",
-  "casual",       // pro-only
-  "jira",         // pro-only
-  "strict",       // pro-only
+  "jira",         
+  "strict",       
 ]
 
 const StyleControl = ({
