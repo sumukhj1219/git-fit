@@ -1,4 +1,4 @@
-#!/usr/bin/env tsx
+#!/usr/bin/env node
 
 import fetch from "node-fetch";
 import { execSync } from "child_process";
@@ -13,13 +13,13 @@ if (!apiKey) {
 
 const diff = execSync("git diff", { encoding: "utf-8" });
 
-const res = await fetch("https://git-fit-one.vercel.app/api/commit", {
+const res = await fetch("https://git-fit-one.vercel.app/api/trpc/cmd.generateCommit", {
   method: "POST",
   headers: {
     "Authorization": `Bearer ${apiKey}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ diff }),
+  body: JSON.stringify({input:{ diff} }),
 });
 
 const data = await res.json();
