@@ -17,7 +17,7 @@ const Pricing = () => {
     },
     {
       name: "Pro",
-      price: "₹250",
+      price: "₹150",
       color: "border-blue-500",
       features: [
         { label: "100 commits/day", included: true },
@@ -29,7 +29,7 @@ const Pricing = () => {
     },
     {
       name: "Team",
-      price: "₹800",
+      price: "₹500",
       color: "border-purple-500",
       features: [
         { label: "Unlimited commits/day", included: true },
