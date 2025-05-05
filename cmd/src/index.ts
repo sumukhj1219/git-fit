@@ -12,7 +12,10 @@ if (!apiKey) {
 }
 
 const diff = execSync("git diff", { encoding: "utf-8" });
-
+if (!diff.trim()) {
+  console.error("⚠️  No changes detected. Nothing to commit.");
+  process.exit(0); 
+}
 const res = await fetch("https://git-fit-one.vercel.app/api/trpc/cmd.generateCommit", {
   method: "POST",
   headers: {
