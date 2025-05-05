@@ -11,9 +11,9 @@ export const createApiKeyForUser = async (userId: string) => {
     include: { Plan: true },
   });
 
-  if (!user || user.Plan?.name !== "Pro") {
-    throw new Error("User must have Pro plan to create API Key");
-  }
+  // if (!user || user.Plan?.name !== "Pro") {
+  //   throw new Error("User must have Pro plan to create API Key");
+  // }
 
   const key = generateApiKey();
 

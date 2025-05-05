@@ -96,5 +96,5 @@ model ApiKey {
     user      User      @relation(fields: [userId], references: [id])
     createdAt DateTime  @default(now())
     lastUsed  DateTime?
-    isActive  Boolean   @default(true)
+    isActive  Boolean   @default(false)
 }
